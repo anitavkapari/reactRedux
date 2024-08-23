@@ -1,19 +1,19 @@
 // CounterComponent.js
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement, Page } from '../redux/counterActions';
-import { View, Text, Button,TextInput } from 'react-native';
+import { View, Text, Button, TextInput } from 'react-native';
 
 const CounterComponent = () => {
   const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
   const page = useSelector((state) => state.counter.page);
 
-  const [task, setTask] = useState('');
+  // const [task, setTask] = useState(page);
 
-  const addTask = (val) => {
-    setTask(val)
-  };
+  // const addTask = (val) => {
+  //   setTask(val)
+  // };
 
   useEffect(() => {
 
@@ -24,15 +24,6 @@ const CounterComponent = () => {
       <Text>Count: {count}</Text>
       <Button onPress={() => dispatch(increment())} title="Increment" />
       <Button onPress={() => dispatch(decrement())} title="Decrement" />
-      <Button onPress={() =>addTask('abc')} title="Page" />
-
-      <TextInput
-        value={task}
-        onChangeText={(val)=>{
-          addTask(val)
-        }}
-        placeholder="Enter Task"
-      />
     </View>
   );
 };

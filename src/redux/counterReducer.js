@@ -1,7 +1,7 @@
 // reducers/counterReducer.js
 const initialState = {
     count: 0,
-    page : 'Welcome'
+    page : 'ReduxValue'
   };
   
   const counterReducer = (state = initialState, action) => {
@@ -11,7 +11,7 @@ const initialState = {
       case 'DECREMENT':
         return { ...state, count: state.count - 1 };
         case 'Page':
-          return { ...state, page: state.page };
+          return { ...state, page: action.payload };
           
       default:
         return state;

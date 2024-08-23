@@ -17,8 +17,11 @@ import {
 } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './src/redux/root/store';
+import ApiComponent from './src/screens/ApiComponent';
 import AsyncStorageExample from './src/screens/AsyncStorageExample';
+import ItemList from './src/screens/ItemList';
 import MainComponent from './src/screens/MainComponent';
+import UserComponent from './src/screens/UserComponent';
 
 
 
@@ -48,8 +51,11 @@ function App() {
         </View>
       </ScrollView>
     </SafeAreaView> */}
-    <MainComponent/>
+    {/* <MainComponent/> */}
     {/* <AsyncStorageExample/> */}
+    {/* <UserComponent/> */}
+    {/* <ApiComponent/> */}
+    <ItemList/>
    </Provider>
   );
 }
